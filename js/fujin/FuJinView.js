@@ -1,5 +1,11 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Image} from 'react-native';
+import {Image, StyleSheet, View, Text} from 'react-native';
+import Header from './Header'
+import TopNavigationItem from './TopNavigationItem'
+import TopNavigationItem2 from './TopNavigationItem2'
+import TopNavigationItem3 from './TopNavigationItem3'
+import TopNavigationItem4 from './TopNavigationItem4'
+import {createMaterialTopTabNavigator} from 'react-navigation';
 
 /**
  * 分类
@@ -22,48 +28,23 @@ export default class FuJinView extends Component {
             )
         },
 
-        tabBarColor:'#ffb92e',
-        headerTitle: '分类',//对页面的配置
-        tabBarLabel: '分类',
+        tabBarColor: '#ffb92e',
+        headerTitle: '附近',//对页面的配置
+        tabBarLabel: '附近',
     };
-    constructor(props){
-        super(props);
-        this.state={
-            ss:0
-        }
-    }
-    componentWillMount() {
-        console.log("logFenl+componentWillMount")
-    }
 
     render() {
         return (
-            <View style={{flex: 1, backgroundColor: '#FFFFFF'}}>
+            <View>
+                <Header/>
+
             </View>
         );
     }
-    componentDidMount() {
-        console.log("logFenl+componentDidMount")
-    }
-
-    componentWillReceiveProps(nextProps) {
-        console.log("logFenl+componentWillReceiveProps")
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        console.log("logFenl+shouldComponentUpdate")
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-        console.log("logFenl+componentWillUpdate")
-    }
-
-    componentDidUpdate() {
-        console.log("logFenl+componentDidUpdate")
-
-    }
 }
+
+
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -76,3 +57,4 @@ const styles = StyleSheet.create({
         height: 21,
     }
 });
+

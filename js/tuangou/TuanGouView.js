@@ -31,8 +31,8 @@ export default class TuanGouView extends Component {
         },
 
         tabBarColor:'#00f9ff',
-        headerTitle: '分类',//对页面的配置
-        tabBarLabel: '分类',
+        headerTitle: '团购',//对页面的配置
+        tabBarLabel: '团购',
     };
 
     constructor(props) {
@@ -84,18 +84,14 @@ export default class TuanGouView extends Component {
             <TouchableNativeFeedback onPress={this.onPressButton.bind(this, item, index)}>
                 <View style={styles.itemView}>
                     <Image source={{uri: item.posters.original}}
-                           style={{width: 150, height: 150}}></Image>
+                           style={{width: 100, height: 100, marginLeft: 10}}></Image>
                     <View style={styles.itemView2}>
 
-                        <View style={styles.itemView1}>
-                            <Text> 电影编号：{item.id} </Text>
-                            <Text> 名称：{item.title} </Text>
-                        </View>
+                            <Text style={styles.flex}> 电影编号：{item.id} </Text>
+                            <Text style={styles.flex}> 名称：{item.title} </Text>
 
-                        <View style={styles.itemView1}>
-                            <Text> 年份：{item.year} </Text>
-                            <Text> 时长：{item.runtime} </Text>
-                        </View>
+                            <Text style={styles.flex}> 年份：{item.year} </Text>
+                            <Text style={styles.flex}> 时长：{item.runtime} </Text>
 
                     </View>
 
@@ -133,7 +129,7 @@ export default class TuanGouView extends Component {
 class ItemDivideComponent extends Component {
     render() {
         return (
-            <View style={{height: 1, backgroundColor: '#4d4d4d'}}/>
+            <View style={{height: 1, backgroundColor: '#a5a5a5',marginRight: 10,marginLeft: 10}}/>
         );
     }
 };
@@ -151,16 +147,18 @@ const styles = StyleSheet.create({
     itemView: {
         alignItems:'center',
         flexDirection: 'row',
-        height: 160
+        height: 105,
     },
     itemView1: {
         flexDirection: 'row',
         justifyContent: 'center'
     },
     itemView2: {
+
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+
     },
     tabBarIcon: {
         width: 21,
@@ -172,6 +170,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#2e9bbb',
         alignItems:'center',
         justifyContent:'space-around'
+
     }
 
 });

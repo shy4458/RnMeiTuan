@@ -9,7 +9,6 @@
 import React from 'react';
 import {createMaterialBottomTabNavigator} from "react-navigation-material-bottom-tabs";
 import {createAppContainer, createStackNavigator} from "react-navigation";
-import {FlatList, Image, StyleSheet, Text, TouchableNativeFeedback, View, ActivityIndicator, RefreshControl, Alert} from 'react-native';
 
 import FuJinView from './fujin/FuJinView';
 import DingDanView from './dingdan/DingDanView';
