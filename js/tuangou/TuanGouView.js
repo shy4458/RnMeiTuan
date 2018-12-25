@@ -83,18 +83,18 @@ export default class TuanGouView extends Component {
         return (
             <TouchableNativeFeedback onPress={this.onPressButton.bind(this, item, index)}>
                 <View style={styles.itemView}>
-                    <Image source={{uri: item.image}}
+                    <Image source={{uri: item.posters.original}}
                            style={{width: 150, height: 150}}></Image>
                     <View style={styles.itemView2}>
 
                         <View style={styles.itemView1}>
-                            <Text> 商品号：{item.id} </Text>
+                            <Text> 电影编号：{item.id} </Text>
                             <Text> 名称：{item.title} </Text>
                         </View>
 
                         <View style={styles.itemView1}>
-                            <Text> 口味：{item.smell} </Text>
-                            <Text> 价格（元）：{item.price} </Text>
+                            <Text> 年份：{item.year} </Text>
+                            <Text> 时长：{item.runtime} </Text>
                         </View>
 
                     </View>
@@ -108,7 +108,7 @@ export default class TuanGouView extends Component {
         this.props.navigation.navigate('Detialed', {
             index: index,
             name: item.title,
-            img:item.image,
+            img:item.posters.origina,
         })
     }
     _onRefresh = () => {
@@ -117,13 +117,13 @@ export default class TuanGouView extends Component {
     }
 
     fetchData() {
-        fetch("http://192.168.33.16:8080/yun/json")
+        fetch("https://raw.githubusercontent.com/facebook/react-native/0.51-stable/docs/MoviesExample.json")
             .then((response) => response.json())
             .then((responseData) => {
                 // 注意，这里使用了this关键字，为了保证this在调用时仍然指向当前组件，我们需要对其进行“绑定”操作
                 this.setState({
                     isShowActivityIndicator: false,
-                    food: responseData,
+                    food: responseData.movies,
                     refreshing: false,
                 });
             });
@@ -137,7 +137,6 @@ class ItemDivideComponent extends Component {
         );
     }
 };
-
 
 const styles = StyleSheet.create({
     container: {

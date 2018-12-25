@@ -40,12 +40,12 @@ export default class FlatListHeader extends Component {
         let menuViews2 = []
         for (let i = 0; i < 10; i++) {
             menuViews1.push(
-                <ScrollViewItem name={headerItemData[i].name} img={headerItemData[i].imag}/>
+                <ScrollViewItem name={headerItemData[i].name} img={headerItemData[i].imag} key={i}/>
             )
         }
         for (let i = 10; i < headerItemData.length; i++) {
             menuViews2.push(
-                <ScrollViewItem name={headerItemData[i].name} img={headerItemData[i].imag}/>
+                <ScrollViewItem name={headerItemData[i].name} img={headerItemData[i].imag} key={i}/>
             )
         }
         return (

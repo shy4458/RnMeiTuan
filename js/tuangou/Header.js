@@ -10,7 +10,7 @@ export default class Header extends Component {
             <View style={styles.view}>
                 <Text style={styles.textView}>北京</Text>
                 <TextInput style={styles.textInPut}
-                           inlineImageLeft='serch'
+                           // inlineImageLeft='serch'
                            multiline={true}
                            placeholder="北京烤鸭"></TextInput>
                 <Image
