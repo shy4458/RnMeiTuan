@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Image} from 'react-native';
-
+import Header from "./Header";
 /**
  * 发现
  *
@@ -8,28 +8,13 @@ import {Platform, StyleSheet, Text, View, Image} from 'react-native';
 
 export default class DingDanView extends Component {
 
-    static navigationOptions = {
-        tabBarIcon: ({focused}) => {
-            if (focused) {
-                return (
-                    <Image style={styles.tabBarIcon}
-                           source={require('../imag/fax_s.png')}></Image>
-                );
-            }
-            return (
-                <Image style={styles.tabBarIcon}
-                       source={require('../imag/fax_n.png')}></Image>
-            );
-        },
 
-        tabBarColor:'#2fff81',
-        headerTitle: '发现',//对页面的配置
-        tabBarLabel: '发现',
-    }
 
     render() {
         return (
-            <View style={{flex: 1, backgroundColor: '#ffffff'}}>
+            <View>
+                <Header/>
+
             </View>
         );
     }

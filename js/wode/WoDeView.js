@@ -10,22 +10,7 @@ import fenl from '../fujin/FuJinView';
 export default class Home extends Component {
 
 
-    static navigationOptions = {
-        tabBarIcon: ({focused}) => {
-            if (focused) {
-                return (
-                    <Image style={styles.tabBarIcon} source={require('../imag/my_s.png')}/>
-                );
-            }
-            return (
-                <Image style={styles.tabBarIcon} source={require('../imag/my_n.png')}/>
-            );
-        },
 
-        tabBarColor:'#8a55ff',
-        headerTitle: '我的',//对页面的配置
-        tabBarLabel: '我的',
-    }
 
     constructor(props) {
         super(props);

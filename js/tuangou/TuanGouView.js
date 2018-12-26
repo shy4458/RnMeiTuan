@@ -1,9 +1,5 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
+ * 团购
  */
 
 import React, {Component} from 'react';
@@ -16,29 +12,13 @@ let navigation = null;
 
 export default class TuanGouView extends Component {
 
-    static navigationOptions = {
-        tabBarIcon: ({focused}) => {
-            if (focused) {
-                return (
-                    <Image style={styles.tabBarIcon}
-                           source={require('../imag/home_s.png')}></Image>
-                );
-            }
-            return (
-                <Image style={styles.tabBarIcon}
-                       source={require('../imag/home_n.png')}></Image>
-            )
-        },
 
-        tabBarColor:'#00f9ff',
-        headerTitle: '团购',//对页面的配置
-        tabBarLabel: '团购',
-    };
 
     constructor(props) {
         super(props);
         this.state = {
             isShowActivityIndicator: true,
+
             food: null,
             refreshing:false,
         },
@@ -84,7 +64,7 @@ export default class TuanGouView extends Component {
             <TouchableNativeFeedback onPress={this.onPressButton.bind(this, item, index)}>
                 <View style={styles.itemView}>
                     <Image source={{uri: item.posters.original}}
-                           style={{width: 100, height: 100, marginLeft: 10}}></Image>
+                           style={{width: 90, height: 90, marginLeft: 15}}></Image>
                     <View style={styles.itemView2}>
 
                             <Text style={styles.flex}> 电影编号：{item.id} </Text>
@@ -158,7 +138,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-
+        margin: 15
     },
     tabBarIcon: {
         width: 21,
