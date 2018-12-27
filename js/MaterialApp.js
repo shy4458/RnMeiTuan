@@ -9,12 +9,13 @@
 import React from 'react';
 import {createMaterialBottomTabNavigator} from "react-navigation-material-bottom-tabs";
 import {createAppContainer, createStackNavigator} from "react-navigation";
-
+import {Text} from 'react-native'
 import FuJinView from './fujin/FuJinView';
 import DingDanView from './dingdan/DingDanView';
 import My from './wode/WoDeView';
 import TuanGouView from './tuangou/TuanGouView';
 import Detialed from './Detialed'
+import Thislocation from './tuangou/Thislocation'
 import {Image, StyleSheet} from "react-native";
 
 
@@ -76,7 +77,7 @@ const MateriaTab = createMaterialBottomTabNavigator(
                 tabBarLabel: '我的',
             }),},
     }, {
-        initialRouteName: '附近',
+        initialRouteName: '团购',
         activeColor: '#000000',
         inactiveColor: '#000000',
         barStyle: {backgroundColor: '#ffffff'},
@@ -94,6 +95,10 @@ const AppNavigator = createStackNavigator({
         Detialed: {
             screen: Detialed,
         },
+        //当前位置
+        Thislocation:{
+            screen: Thislocation,
+        }
     },
     {
         initialRouteName: "MateriaTab",

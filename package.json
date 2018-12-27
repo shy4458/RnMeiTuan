@@ -9,6 +9,7 @@
   "dependencies": {
     "react": "16.6.1",
     "react-native": "0.57.7",
+    "react-native-collapsible": "^1.4.0",
     "react-native-gesture-handler": "^1.0.10",
     "react-native-paper": "^2.3.0",
     "react-native-scrollable-tab-view": "^0.10.0",

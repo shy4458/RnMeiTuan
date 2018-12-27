@@ -1,14 +1,22 @@
 /** @format */
 import React, {Component} from 'react';
-import {Image, StyleSheet, Text, TextInput, View, Dimensions} from 'react-native';
-
-
+import {Dimensions, Image, StyleSheet, Text, TextInput, TouchableNativeFeedback, View} from 'react-native';
 const {height, width} = Dimensions.get('window');
+
+
 export default class Header extends Component {
+
+    constructor(props) {
+        super(props);
+
+    }
+
     render() {
         return (
             <View style={styles.view}>
+                <TouchableNativeFeedback onPress={() => this.props.navigate('Thislocation')}>
                 <Text style={styles.textView}>北京</Text>
+                </TouchableNativeFeedback>
                 <TextInput style={styles.textInPut}
                            // inlineImageLeft='serch'
                            multiline={true}
@@ -42,6 +50,7 @@ const styles = StyleSheet.create({
         borderBottomRightRadius: 20,
         borderBottomLeftRadius: 20,
         backgroundColor: '#FFFFFF'
+
     }
 
 });

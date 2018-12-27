@@ -40,7 +40,8 @@ export default class TuanGouView extends Component {
         }else {
             return (
                 <View style={{backgroundColor:'#FFFFFF'}}>
-                    <Header/>
+                    <Header navigate={this.props.navigation.navigate}/>
+                    <View style={{height: 1,backgroundColor:'#000000'}}></View>
                     <FlatList
                         keyExtractor={(item, index) => (item.id)}
                         data={this.state.food}
