@@ -1,26 +1,32 @@
 /** @format */
 import React, {Component} from 'react';
 import {Dimensions, Image, StyleSheet, Text, TextInput, TouchableNativeFeedback, View} from 'react-native';
+
 const {height, width} = Dimensions.get('window');
 
 
-export default class Header extends Component {
+type Props = {
+    city: "city"
+}
+
+export default class Header extends Component<Props> {
 
     constructor(props) {
         super(props);
-
     }
 
     render() {
+        let {city} = this.props;
         return (
             <View style={styles.view}>
-                <TouchableNativeFeedback onPress={() => this.props.navigate('Thislocation')}>
-                <Text style={styles.textView}>北京</Text>
+                <TouchableNativeFeedback onPress={() => this.props.navigate('Thislocation', {thisCity: city})}>
+                    <Text style={styles.textView}>{city}</Text>
                 </TouchableNativeFeedback>
-                <TextInput style={styles.textInPut}
-                           // inlineImageLeft='serch'
-                           multiline={true}
-                           placeholder="北京烤鸭"></TextInput>
+                <TouchableNativeFeedback onPress={() => this.props.navigate('Search',)}>
+                <Text style={styles.textInPut}
+                    // inlineImageLeft='serch'
+                           multiline={true}>北京烤鸭</Text>
+                </TouchableNativeFeedback>
                 <Image
                     source={require('../imag/lingdang_n.png')}
                     style={{width: 30, height: 30}}
@@ -49,8 +55,10 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 20,
         borderBottomRightRadius: 20,
         borderBottomLeftRadius: 20,
-        backgroundColor: '#FFFFFF'
-
+        backgroundColor: '#FFFFFF',
+        textAlign: 'center',
+        fontSize: 18,
+        paddingTop: 8
     }
 
 });

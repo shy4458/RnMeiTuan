@@ -17,7 +17,7 @@ import TuanGouView from './tuangou/TuanGouView';
 import Detialed from './Detialed'
 import Thislocation from './tuangou/Thislocation'
 import {Image, StyleSheet} from "react-native";
-
+import Search from './tuangou/Search'
 
 const MateriaTab = createMaterialBottomTabNavigator(
     {
@@ -98,6 +98,13 @@ const AppNavigator = createStackNavigator({
         //当前位置
         Thislocation:{
             screen: Thislocation,
+        },
+        //搜索
+        Search:{
+            screen:Search,
+            navigationOptions: ({navigation}) => ({
+                header: null, //当前也不显示导航头
+            }),
         }
     },
     {

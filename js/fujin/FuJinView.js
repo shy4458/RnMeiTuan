@@ -21,7 +21,6 @@ export default class FuJinView extends Component {
 
     constructor(props){
         super(props);
-
     }
 
     componentDidMount() {
@@ -58,7 +57,6 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     searchBar: {
-
         height: 30,
         borderRadius: 19,
         flexDirection: 'row',
@@ -83,7 +81,6 @@ const styles = StyleSheet.create({
     },
     ScrollableTabView:{
         backgroundColor:'#FFFFFF',
-
     },
     tabBarTextStyle:{
         fontSize: 15
@@ -151,7 +148,3 @@ const TabNavigator = createMaterialTopTabNavigator(
     }
     );
 const Tab = createAppContainer(TabNavigator);
-
-
-
-

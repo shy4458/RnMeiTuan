@@ -3,7 +3,19 @@
  */
 
 import React, {Component} from 'react';
-import {FlatList, Image, StyleSheet, Text, TouchableNativeFeedback, View, ActivityIndicator, RefreshControl, Alert, TextInput} from 'react-native';
+import {
+    FlatList,
+    Image,
+    StyleSheet,
+    Text,
+    TouchableNativeFeedback,
+    View,
+    ActivityIndicator,
+    RefreshControl,
+    Alert,
+    TextInput,
+    DeviceEventEmitter
+} from 'react-native';
 import Header from './Header'
 import FlatListHeader from './FlatListHeader'
 
@@ -18,7 +30,7 @@ export default class TuanGouView extends Component {
         super(props);
         this.state = {
             isShowActivityIndicator: true,
-
+            thisCity: "北京",
             food: null,
             refreshing:false,
         },
@@ -26,8 +38,17 @@ export default class TuanGouView extends Component {
     }
 
     componentDidMount() {
+        DeviceEventEmitter.addListener('backCity',(dic)=>{
+            //接收到详情页发送的通知，刷新首页的数据，改变按钮颜色和文字，刷新UI
+            this.setState({
+                thisCity:dic.thisCity,
+
+            });
+        });
+
         this.fetchData();
     }
+
 
     render() {
         if (this.state.isShowActivityIndicator) {
@@ -40,7 +61,7 @@ export default class TuanGouView extends Component {
         }else {
             return (
                 <View style={{backgroundColor:'#FFFFFF'}}>
-                    <Header navigate={this.props.navigation.navigate}/>
+                    <Header navigate={this.props.navigation.navigate } city={this.state.thisCity}/>
                     <View style={{height: 1,backgroundColor:'#000000'}}></View>
                     <FlatList
                         keyExtractor={(item, index) => (item.id)}
