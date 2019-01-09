@@ -80,7 +80,6 @@ export default class TuanGouView extends Component {
         }
     }
 
-
     renderItem(item, index) {
         return (
             <TouchableNativeFeedback onPress={this.onPressButton.bind(this, item, index)}>

@@ -14,7 +14,7 @@ import FuJinView from './fujin/FuJinView';
 import DingDanView from './dingdan/DingDanView';
 import My from './wode/WoDeView';
 import TuanGouView from './tuangou/TuanGouView';
-import Detialed from './Detialed'
+import Detialed from './Detialed/Detialed'
 import Thislocation from './tuangou/Thislocation'
 import {Image, StyleSheet} from "react-native";
 import Search from './tuangou/Search'
@@ -94,6 +94,9 @@ const AppNavigator = createStackNavigator({
         },
         Detialed: {
             screen: Detialed,
+            navigationOptions: ({navigation}) => ({
+                header: null, //当前也不显示导航头
+            }),
         },
         //当前位置
         Thislocation:{
